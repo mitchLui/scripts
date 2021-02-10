@@ -7,7 +7,7 @@ This repository stores all of the scripts I use. Also contains some boilerplate 
     - [1.1.1. Usage](#111-usage)
   - [1.2. `build_container.sh`](#12-build_containersh)
     - [1.2.1. Usage](#121-usage)
-  - [1.3. `compose_up.sh`](#13-compose_upsh)
+  - [1.3. `build_service.sh`](#13-build_servicesh)
     - [1.3.1. Usage](#131-usage)
 
 ## 1.1. `setup.sh`
@@ -44,7 +44,7 @@ Used to build containers in Docker. This script was written by an ex-colleague o
 | -------- | ------------- | ------- | ------------- |
 | PORT     | Incoming port | 80      | 80            |
 
-## 1.3. `compose_up.sh`
+## 1.3. `build_service.sh`
 
 Sets up a multi-container Docker application using Compose.
 
