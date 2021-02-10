@@ -52,6 +52,7 @@ PACKAGES=(
     mysql
     ghc
     cabal-install
+    mas
 )
 
 brew install ${PACKAGES[@]}
@@ -106,3 +107,40 @@ PIP_PACKAGES=(
 
 pip3 install ${PIP_PACKAGES[@]}
 
+MAC_IDS=(
+    497799835 #Xcode
+    430255202 #MacTracker
+    572491815 #Textastic
+    1493005285 #Logoist
+    1435957248 #Drafts
+    1449412482 #Reeder
+    682658836 #Garageband
+    1116599239 #NordVPN
+    1276248849 #Diagrams
+    1290358394 #Cardhop
+    1147396723 #WhatsApp
+    424389933 #Final Cut Pro
+    577085396 #Unclutter
+    993487541 #CARROT
+    1019371109 #Balance Lock
+    1224268771 #Screens
+    1037126344 #Apple Configurator
+    1289583905 #Pixelmator Pro
+    1176895641 #Spark
+    441258766 #Magnet
+    425424353 #Unarchiver
+    1482454543 #Twitter
+    1478447657 #Geekbench
+    409201541 #Pages
+    1444383602 #GoodNotes
+    747648890 #Telegram
+    1120099014 #PDF Viewer
+    640199958 #Developer
+    639968404 #Parcel
+    409203825 #Numbers
+    461788075 #Movist
+    409183694 #Keynote
+    1018301773 #AdBlock Pro
+)
+
+mas install ${MAC_IDS[@]}
