@@ -16,7 +16,7 @@ then
 fi
 TAG=${PWD##*/}
 TIMEZONE="TZ=Asia/Hong_Kong"
-sudo docker build --build-arg BUILD_DATE=$BUILD_DATE --build-arg TITLE=$TAG -t $TAG:$VER .
+sudo docker build --build-arg TITLE=$TAG -t $TAG:$VER .
 EXIST=`sudo docker inspect --format "{{ index .Config.Labels \"org.opencontainers.image.title\"}}" $TAG`
 if [ "$TAG" == "$EXIST" ]
 then
