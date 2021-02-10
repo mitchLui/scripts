@@ -1,5 +1,4 @@
 #!/bin/sh
-# build_container.sh <port>
 FILE=Dockerfile
 if [ ! -f "$FILE" ]
 then
