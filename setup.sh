@@ -72,7 +72,7 @@ CASKS=(
     vagrant
 )
 
-brew install --cask ${PACKAGES[@]}
+brew install --cask ${CASKS[@]}
 
 echo "Cleaning up..."
 
@@ -104,4 +104,5 @@ PIP_PACKAGES=(
     uvicorn
 )
 
+pip3 install ${PIP_PACKAGES[@]}
 
