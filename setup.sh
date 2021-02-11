@@ -46,7 +46,6 @@ PACKAGES=(
     git
     docui
     pyenv
-    youtube-dl
     mysql
     ghc
     cabal-install
@@ -60,7 +59,6 @@ echo "Installing casks..."
 CASKS=(
     ngrok
     microsoft-edge
-    minikube
     docker
     visual-studio-code
     postman
@@ -93,6 +91,7 @@ PIP_PACKAGES=(
     bs4
     python-dotenv
     pymysql
+    dearpygui
     lxml
     mutagen
     loguru

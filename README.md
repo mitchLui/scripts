@@ -51,5 +51,5 @@ Sets up a multi-container Docker application using Compose.
 ### 1.3.1. Usage
 
 ```sh
-./compose_up.sh
+./build_service.sh
 ```
