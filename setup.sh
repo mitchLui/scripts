@@ -39,6 +39,7 @@ PACKAGES=(
     neofetch
     docker
     kubectl
+    minikube
     kind
     bash-completion
     ffmpeg
@@ -59,6 +60,7 @@ echo "Installing casks..."
 CASKS=(
     ngrok
     microsoft-edge
+    microsoft-office
     docker
     visual-studio-code
     postman
@@ -70,11 +72,11 @@ CASKS=(
 
 brew install --cask ${CASKS[@]}
 
-echo "Cleaning up..."
+echo `"Cleaning up..."`
 
 brew cleanup
 
-echo "Installing pip packages..."
+echo `"Installing pip packages..."`
 
 PIP_PACKAGES=(
     pre-commit
