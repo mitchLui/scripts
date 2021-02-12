@@ -51,6 +51,7 @@ PACKAGES=(
     ghc
     cabal-install
     mas
+    tmux
 )
 
 brew install ${PACKAGES[@]}
