@@ -52,6 +52,7 @@ PACKAGES=(
     cabal-install
     mas
     tmux
+    micro
 )
 
 brew install ${PACKAGES[@]}
@@ -102,6 +103,8 @@ PIP_PACKAGES=(
     scipy
     fastapi
     uvicorn
+    pytest
+    black
 )
 
 pip3 install ${PIP_PACKAGES[@]}
