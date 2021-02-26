@@ -21,6 +21,7 @@ brew install bash
 echo "Tapping into taps..."
 
 TAPS=(
+    homebrew/cask-versions
 )
 
 brew tap ${TAPS[@]}
@@ -53,6 +54,7 @@ PACKAGES=(
     mas
     tmux
     micro
+    mvn
 )
 
 brew install ${PACKAGES[@]}
@@ -185,6 +187,7 @@ APP_URLS=(
     https://github.com/DigiDNA/Silicon/releases/download/1.0.3/Silicon.app.zip
     https://devimages-cdn.apple.com/design/resources/download/SF-Symbols-2.1.dmg
     https://d2oxtzozd38ts8.cloudfront.net/audiohijack/download/AudioHijack.zip
+    https://d2oxtzozd38ts8.cloudfront.net/soundsource/download/SoundSource.zip
 )
 
 wget ${APP_URLS[@]}
