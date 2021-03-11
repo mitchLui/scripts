@@ -107,6 +107,7 @@ PIP_PACKAGES=(
     uvicorn
     pytest
     black
+    matplotlib
 )
 
 pip3 install ${PIP_PACKAGES[@]}
