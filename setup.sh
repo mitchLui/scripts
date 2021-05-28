@@ -56,7 +56,7 @@ PACKAGES=(
     mvn
     pypy
     pyenv-pip-migrate
-    qmk/qmk/qmk
+    qmk
 )
 
 brew install ${PACKAGES[@]}
