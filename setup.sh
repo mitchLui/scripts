@@ -6,11 +6,11 @@ chsh -s /bin/bash
 
 echo "Setting up machine $HOSTNAME..."
 
-echo "Installing Xcode developer tools"
+echo "Installing Xcode developer tools..."
 
 xcode-select --install
 
-echo "Installing homebrew"
+echo "Installing homebrew..."
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -21,7 +21,7 @@ brew install bash
 echo "Tapping into taps..."
 
 TAPS=(
-    homebrew/cask-versions
+    homebrew/cask-drivers
 )
 
 brew tap ${TAPS[@]}
@@ -55,6 +55,9 @@ PACKAGES=(
     tmux
     micro
     mvn
+    pypy
+    pyenv-pip-migrate
+    qmk/qmk/qmk
 )
 
 brew install ${PACKAGES[@]}
@@ -63,15 +66,53 @@ echo "Installing casks..."
 
 CASKS=(
     ngrok
-    microsoft-edge
-    microsoft-office
-    docker
-    visual-studio-code
-    postman
-    mysqlworkbench
-    terminus
-    virtualbox
     vagrant
+    caldigit-docking-utility
+    logitech-options
+    logitech-unifying
+    aerial
+    airbuddy
+    airfoil
+    alfred
+    audio-hijack
+    logitech-camera-settings
+    cleanmymac
+    coconutbattery
+    coderunner
+    daisydisk
+    db-browser-for-sqlite
+    discord
+    docker
+    downie
+    endurance
+    figma
+    firefox
+    folx
+    imazing
+    ledger-live
+    loopback
+    macs-fan-control
+    microsoft-office
+    microsoft-teams
+    minecraft
+    minecraft-server
+    mysqlworkbench
+    parallels
+    permute
+    postman
+    qmk-toolbox
+    safari-technology-preview
+    sensei
+    sf-symbols
+    soulver
+    soundsource
+    steam
+    terminus
+    via
+    virtualbox
+    visual-studio-code
+    wifi-explorer
+    zoom
 )
 
 brew install --cask ${CASKS[@]}
@@ -146,51 +187,11 @@ MAC_IDS=(
     461788075  #Movist
     409183694  #Keynote
     1018301773 #AdBlock Pro
-)
+    1516894961 #Codye
+    1453295546 #Markdown Editor Pro
+    1465439395 #Dark Noise
+    1232603544 #HTTPBot
 
 mas install ${MAC_IDS[@]}
-
-cd ~/Downloads
-
-APP_URLS=(
-    https://desktop-release.notion-static.com/Notion-2.0.11.dmg
-    https://download01.logi.com/web/ftp/pub/controldevices/unifying/unifying1.3.375_mac.zip
-    https://teams.microsoft.com/downloads/desktopurl?env=production&plat=osx&arch=&download=true
-    https://coderunnerapp.com/download
-    https://coderunner.nyc3.cdn.digitaloceanspaces.com/CodeRunner-4.0.3.zip
-    https://charliemonroesoftware.com/trial/downie/v4/Downie_4_4208.dmg
-    https://charliemonroesoftware.com/trial/permute/v3/Permute_3_2338.dmg
-    https://desktop.figma.com/mac/Figma.zip
-    https://dl.devmate.com/com.macpaw.CleanMyMac4/CleanMyMacX.dmg
-    https://downloads.imazing.com/mac/iMazing/iMazing2forMac.dmg
-    https://daisydiskapp.com/downloads/DaisyDisk.zip
-    https://s3.amazonaws.com/cindori/Sensei.dmg
-    https://github.com/qmk/qmk_toolbox/releases/download/0.0.21/QMK.Toolbox.app.zip
-    https://github.com/the-via/releases/releases/download/v1.3.1/via-1.3.1-mac.dmg
-    https://www.dropbox.com/s/m9c49ia10kx3g2b/BootMapperClient.mac.zip?dl=0
-    https://cachefly.alfredapp.com/Alfred_4.3.1_1214.dmg
-    https://enduranceapp.com/downloads/Endurance3.1.zip
-    https://v2.airbuddy.app/download
-    https://crystalidea.com/downloads/macsfancontrol.zip
-    https://d2oxtzozd38ts8.cloudfront.net/loopback/download/Loopback.zip
-    https://download01.logi.com/web/ftp/pub/techsupport/cameras/Webcams/LogiCameraSettings_3.0.23.pkg
-    https://downloads.caldigit.com/CalDigit_TS3_Plus_Firmware_Updater.zip
-    https://downloads.caldigit.com/CalDigit-Docking-Station-Utility.zip
-    https://cdn.eltima.com/download/downloader_mac.dmg
-    https://coconut-flavour.com/downloads/coconutBattery_latest.zip
-    https://d1k3ac1niusr4e.cloudfront.net/soulver.zip
-    https://download01.logi.com/web/ftp/pub/techsupport/options/Options_8.36.76.zip
-    https://download.parallels.com/desktop/v16/16.1.3-49160/ParallelsDesktop-16.1.3-49160.dmg
-    https://github.com/glouel/AerialCompanion/releases/latest/download/AerialCompanion.dmg
-    https://www.macbartender.com/B2/updates/B4Latest/Bartender%204.dmg
-    https://zoom.us/client/latest/Zoom.pkg
-    https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.12.1/DB.Browser.for.SQLite-3.12.1-v2.dmg
-    https://github.com/DigiDNA/Silicon/releases/download/1.0.3/Silicon.app.zip
-    https://devimages-cdn.apple.com/design/resources/download/SF-Symbols-2.1.dmg
-    https://d2oxtzozd38ts8.cloudfront.net/audiohijack/download/AudioHijack.zip
-    https://d2oxtzozd38ts8.cloudfront.net/soundsource/download/SoundSource.zip
-)
-
-wget ${APP_URLS[@]}
 
 #TODO SETUP SYSTEM PREFERENCES
