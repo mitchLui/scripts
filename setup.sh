@@ -194,4 +194,45 @@ MAC_IDS=(
 
 mas install ${MAC_IDS[@]}
 
+echo "Setting up bash..."
+
+cat > .bash_profile <<- EOM
+source ~/.bash_prompt
+source ~/.aliases
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="~/.local/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export JAVA_HOME=`/usr/libexec/java_home -v 11.0.11`
+EOM
+
+cat > .bash_prompt <<- EOM
+#!/usr/bin/env bash
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+#TERMINAL PROMPT
+
+PS1="\[\e[01;92m\]\u\[\e[m\]" #username
+PS1+=" "
+PS1+="\[\e[0;95m\]\W\[\e[m\]" #current directory
+PS1+=" "
+PS1+=">> "
+
+export PS1;
+EOM
+
+cat > .bashrc <<- EOM
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export JAVA_HOME=`/usr/libexec/java_home -v 11.0.11`
+EOM
+
+. .bash_profile
+
 #TODO SETUP SYSTEM PREFERENCES
+
