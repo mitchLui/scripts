@@ -30,7 +30,6 @@ echo "Installing packages..."
 
 PACKAGES=(
     cask
-    python
     golang
     openjdk
     node
@@ -61,6 +60,13 @@ PACKAGES=(
 )
 
 brew install ${PACKAGES[@]}
+
+echo "Installing Python..."
+
+PYTHON_VER="3.9.2"
+
+pyenv install $PYTHON_VER
+pyenv global $PYTHON_VER
 
 echo "Installing casks..."
 
