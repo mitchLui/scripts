@@ -119,6 +119,7 @@ CASKS=(
     visual-studio-code
     wifi-explorer
     zoom
+    etrecheckpro
 )
 
 brew install --cask ${CASKS[@]}
