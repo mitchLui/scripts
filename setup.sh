@@ -120,6 +120,7 @@ CASKS=(
     wifi-explorer
     zoom
     etrecheckpro
+    binance
 )
 
 brew install --cask ${CASKS[@]}
