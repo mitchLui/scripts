@@ -27,7 +27,7 @@ It also sets up:
 ### 1.1.1. Usage
 
 ```sh
-./setup.sh
+/bin/bash setup.sh
 ```
 
 ## 1.2. `build_container.sh`

@@ -198,6 +198,7 @@ MAC_IDS=(
     1453295546 #Markdown Editor Pro
     1465439395 #Dark Noise
     1232603544 #HTTPBot
+)
 
 mas install ${MAC_IDS[@]}
 
