@@ -63,7 +63,7 @@ brew install ${PACKAGES[@]}
 
 echo "Installing Python..."
 
-PYTHON_VER="3.9.2"
+PYTHON_VER="3.9.5"
 
 pyenv install $PYTHON_VER
 pyenv global $PYTHON_VER
