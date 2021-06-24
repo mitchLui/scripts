@@ -22,6 +22,8 @@ echo "Tapping into taps..."
 
 TAPS=(
     homebrew/cask-drivers
+    ethereum/ethereum
+    qmk/qmk
 )
 
 brew tap ${TAPS[@]}
@@ -57,6 +59,9 @@ PACKAGES=(
     pypy
     pyenv-pip-migrate
     qmk
+    node
+    ethereum
+    solidity
 )
 
 brew install ${PACKAGES[@]}
