@@ -59,7 +59,6 @@ PACKAGES=(
     pypy
     pyenv-pip-migrate
     qmk
-    node
     ethereum
     solidity
 )
