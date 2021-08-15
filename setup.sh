@@ -20,13 +20,9 @@ brew install bash
 
 echo "Tapping into taps..."
 
-TAPS=(
-    homebrew/cask-drivers
-    ethereum/ethereum
-    qmk/qmk
-)
-
-brew tap ${TAPS[@]}
+brew tap homebrew/cask-drivers
+brew tap ethereum/ethereum
+brew tap qmk/qmk
 
 echo "Installing packages..."
 
@@ -67,7 +63,7 @@ brew install ${PACKAGES[@]}
 
 echo "Installing Python..."
 
-PYTHON_VER="3.9.5"
+PYTHON_VER="3.9.6"
 
 pyenv install $PYTHON_VER
 pyenv global $PYTHON_VER
@@ -220,7 +216,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export JAVA_HOME=`/usr/libexec/java_home -v 11.0.11`
+export JAVA_HOME="/usr/libexec/java_home -v 11.0.11"
 EOM
 
 cat > .bash_prompt <<- EOM
