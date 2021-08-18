@@ -241,7 +241,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 eval "$(pyenv init -)"
 EOM
 
-cat > .bash_prompt <<- EOM
+cat > .profile <<- EOM
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
