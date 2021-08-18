@@ -203,20 +203,22 @@ MAC_IDS=(
 
 mas install ${MAC_IDS[@]}
 
+npm install -g @vue/cli
+
 echo "Setting up bash..."
+
+cd
 
 cat > .bash_profile <<- EOM
 source ~/.bash_prompt
 source ~/.aliases
+source ~/.profile
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH="~/.local/bin"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export JAVA_HOME="/usr/libexec/java_home -v 11.0.11"
+export NODE_ENV=development
 EOM
 
 cat > .bash_prompt <<- EOM
@@ -235,10 +237,14 @@ PS1+=">> "
 
 export PS1;
 EOM
-
-cat > .bashrc <<- EOM
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export JAVA_HOME=`/usr/libexec/java_home -v 11.0.11`
+eval "$(pyenv init -)"
+EOM
+
+cat > .bash_prompt <<- EOM
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 EOM
 
 . .bash_profile
