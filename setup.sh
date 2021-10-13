@@ -46,7 +46,6 @@ PACKAGES=(
     docui
     pyenv
     mysql
-    ghc
     cabal-install
     mas
     tmux
@@ -63,7 +62,7 @@ brew install ${PACKAGES[@]}
 
 echo "Installing Python..."
 
-PYTHON_VER="3.9.6"
+PYTHON_VER="3.9.7"
 
 pyenv install $PYTHON_VER
 pyenv global $PYTHON_VER
@@ -157,6 +156,7 @@ PIP_PACKAGES=(
     pytest
     black
     matplotlib
+    sqlmodel
 )
 
 pip3 install ${PIP_PACKAGES[@]}
@@ -205,6 +205,13 @@ mas install ${MAC_IDS[@]}
 
 npm install -g @vue/cli
 
+echo "Setting up ghc..."
+
+export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
+export BOOTSTRAP_HASKELL_GHC_VERSION=9.0.1
+
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
 echo "Setting up bash..."
 
 cd
@@ -212,13 +219,21 @@ cd
 cat > .bash_profile <<- EOM
 source ~/.bash_prompt
 source ~/.aliases
-source ~/.profile
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH="~/.local/bin"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export NODE_ENV=development
+
+export PYENV_ROOT="$HOME/.pyenv"
+
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+[[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
 EOM
 
 cat > .bash_prompt <<- EOM
@@ -236,15 +251,6 @@ PS1+=" "
 PS1+=">> "
 
 export PS1;
-EOM
-export BASH_SILENCE_DEPRECATION_WARNING=1
-eval "$(pyenv init -)"
-EOM
-
-cat > .profile <<- EOM
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
 EOM
 
 . .bash_profile
