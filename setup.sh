@@ -163,6 +163,7 @@ pip3 install ${PIP_PACKAGES[@]}
 
 MAC_IDS=(
     497799835  #Xcode
+    1278508951 #Trello
     430255202  #MacTracker
     572491815  #Textastic
     1493005285 #Logoist
@@ -199,6 +200,7 @@ MAC_IDS=(
     1453295546 #Markdown Editor Pro
     1465439395 #Dark Noise
     1232603544 #HTTPBot
+    1243219105 #F5 Access
 )
 
 mas install ${MAC_IDS[@]}
@@ -215,6 +217,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 echo "Setting up bash..."
 
 cd
+
+mkdir Local\ Documents
 
 cat > .bash_profile <<- EOM
 source ~/.bash_prompt
@@ -248,7 +252,7 @@ PS1="\[\e[01;92m\]\u\[\e[m\]" #username
 PS1+=" "
 PS1+="\[\e[0;95m\]\W\[\e[m\]" #current directory
 PS1+=" "
-PS1+=">> "
+PS1+="$ "
 
 export PS1;
 EOM
@@ -256,4 +260,5 @@ EOM
 . .bash_profile
 
 #TODO SETUP SYSTEM PREFERENCES
+
 
