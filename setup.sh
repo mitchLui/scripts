@@ -6,6 +6,10 @@ chsh -s /bin/bash
 
 echo "Setting up machine $HOSTNAME..."
 
+echo "Installing Rosetta 2..."
+
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+
 echo "Installing Xcode developer tools..."
 
 xcode-select --install
@@ -83,7 +87,6 @@ CASKS=(
     logitech-camera-settings
     cleanmymac
     coconutbattery
-    coderunner
     daisydisk
     db-browser-for-sqlite
     discord
