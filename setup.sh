@@ -123,6 +123,7 @@ CASKS=(
     zoom
     etrecheckpro
     binance
+    tabby
 )
 
 brew install --cask ${CASKS[@]}
