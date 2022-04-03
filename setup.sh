@@ -25,6 +25,7 @@ brew install bash
 echo "Tapping into taps..."
 
 brew tap homebrew/cask-drivers
+brew tap jandedobbeleer/oh-my-posh
 brew tap ethereum/ethereum
 brew tap qmk/qmk
 
@@ -58,8 +59,11 @@ PACKAGES=(
     pypy
     pyenv-pip-migrate
     qmk
+    kompose
     ethereum
     solidity
+    fish
+    oh-my-posh
 )
 
 brew install ${PACKAGES[@]}
