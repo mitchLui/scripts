@@ -237,7 +237,7 @@ export PATH="~/.local/bin"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export NODE_ENV=development
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export PYENV_ROOT="$HOME/.pyenv"
 
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -246,6 +246,19 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 [[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
+  . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+fi
+if [ -f `brew --prefix`/etc/bash_completion.d/git-flow-completion.bash ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-flow-completion.bash
+fi
+eval "$(rbenv init - bash)"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+
 EOM
 
 cat > .bash_prompt <<- EOM
@@ -263,6 +276,17 @@ PS1+=" "
 PS1+="$ "
 
 export PS1;
+;
+EOM
+
+cat > .bashrc <<- EOM
+export BASH_SILENCE_DEPRECATION_WARNING=1
+eval "$(pyenv init -)"
+[ -f "/Users/mitchlui/.ghcup/env" ] && source "/Users/mitchlui/.ghcup/env" # ghcup-env
+
+export PATH="/Users/mitchlui/.deta/bin:$PATH"
+
+
 EOM
 
 . .bash_profile

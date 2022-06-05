@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# SUDO
+alias pls="sudo"
+
+# RASPBERRY PI
+alias pi="ssh ubuntu@10.101.130.173"
+
+#SSH
+alias seis="ssh vf20340@seis.bris.ac.uk"
+alias lab_machine="ssh -A -J vf20340@seis.bris.ac.uk vf20340@rd-mvb-linuxlab.bristol.ac.uk"
+
+# COMMON DIRECTORIES
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias doc="cd ~/Documents"
+alias ld="cd ~/Local\ Documents/"
+alias projects="cd ~/personal_projects"
+alias work="cd ~/asiabots_projects"
+alias ai="cd ~/personal_projects/ai_workflow"
+
+# 2021-2022 Schoolwork
+
+alias tut="cd ~/Documents/school/2021-2022/group_tutorial"
+alias sep="cd ~/Documents/school/2021-2022/coms20006_software_project"
+alias plc="cd ~/Documents/school/2021-2022/tb1/coms20007_programming_lang_computation"
+alias csa="cd ~/Documents/school/2021-2022/tb1/coms20008_computer_systems_a"
+alias algo2="cd ~/Documents/school/2021-2022/tb1/coms20010_algorithms"
+alias ins="cd ~/Documents/school/2021-2022/tb2/coms20009_interaction_society"
+alias ddcs="cd ~/Documents/school/2021-2022/tb2/coms20011_data_driven_cs"
+alias csb="cd ~/Documents/school/2021-2022/tb2/coms20012_computer_systems_b"
+alias ta="cd ~/Documents/school/teaching_assistant"
+
+# 2020-2021 Schoolwork
+
+alias mathsa="cd ~/Documents/school/2020-2021/tb1/coms10014_maths_a"
+alias mathsb="cd ~/Documents/school/2020-2021/tb2/coms10013_maths_b"
+alias st="cd ~/Documents/school/2020-2021/tb2/coms10012_software_tools"
+alias algo1="cd ~/Documents/school/2020-2021/tb2/coms10017_algorithms"
+alias oop="cd ~/Documents/school/2020-2021/tb2/coms10017_oop"
+alias stlab="cd ~/Documents/school/2020-2021/tb2/coms10012_software_tools/lab"
+
+# Jupyter Noteobook
+alias jn="jupyter notebook"
+
+# SCREEN
+alias screen="/usr/local/bin/screen"
+
+# NEOFETCH
+alias nf="neofetch"
+
+# PYTHON
+alias py="python3"
+
+# GLOBAL SCRIPTS
+alias compile_c="./~/shell_scripts/c_compose.sh"
+
+# ATTEND CLASS
+alias attend_class="cd /Users/mitchlui/personal_projects/attend_class && python3 /Users/mitchlui/personal_attend_class.py"
+
