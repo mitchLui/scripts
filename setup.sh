@@ -71,7 +71,17 @@ cd
 mkdir Local\ Documents
 
 cat > .zshrc <<- EOM
-PROMPT='%F{cyan}%n%f ~ '
+PROMPT='%F{22}%B%n%b%f %F{92}%1~%f $ '
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias doc="cd ~/Documents"
+alias ld="cd ~/Local\ Documents/"
+alias proj="cd ~/projects"
 EOM
 
 
