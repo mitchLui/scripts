@@ -82,6 +82,9 @@ alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 alias ld="cd ~/Local\ Documents/"
 alias proj="cd ~/projects"
+
+autoload -U compinit && compinit
+zmodload -i zsh/complist
 EOM
 
 
