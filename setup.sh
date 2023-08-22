@@ -1,22 +1,16 @@
 #!/bin/zsh
 
-if [[ $1 =~ ^(-p|--profile) ]]
-then
-  if [[ $2 = "work"]]
-  then
-    echo "Setting up work machine..."
-    brewfile="work-brewfile"
-  elif [[ $2 = "personal"]]
-  then
-    echo "Setting up home machine..."
-    brewfile="personal-brewfile"
-  else
-    echo "Invalid profile - should be personal or work"
-    exit 1
-  fi
-fi
+while [[ "$#" -gt 0 ]]
+do case $1 in
+    -p|--profile) brewfile="$2"
+    shift;;
+    *) echo "Unknown parameter passed: $1"
+    exit 1;;
+esac
+shift
+done
 
-echo "Setting up machine $HOSTNAME with profile $brewfile"
+echo "Setting up machine with profile $brewfile"
 
 echo "Installing Rosetta 2..."
 

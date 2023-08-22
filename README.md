@@ -20,14 +20,14 @@ This is a script I use to set up a new Mac for development and installs the foll
 
 It also sets up: 
 
-- bash environment
-- custom shell profile
-- system preferences
+- zsh environment
+- custom shell prompt
+- custom aliases
 
 ### 1.1.1. Usage
 
 ```sh
-/bin/bash setup.sh
+setup.sh -f <file>
 ```
 
 ## 1.2. `build_container.sh`
