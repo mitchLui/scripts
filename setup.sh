@@ -1,6 +1,22 @@
 #!/bin/zsh
 
-echo "Setting up machine $HOSTNAME..."
+if [[ $1 =~ ^(-p|--profile) ]]
+then
+  if [[ $2 = "work"]]
+  then
+    echo "Setting up work machine..."
+    brewfile="work-brewfile"
+  elif [[ $2 = "personal"]]
+  then
+    echo "Setting up home machine..."
+    brewfile="personal-brewfile"
+  else
+    echo "Invalid profile - should be personal or work"
+    exit 1
+  fi
+fi
+
+echo "Setting up machine $HOSTNAME with profile $brewfile"
 
 echo "Installing Rosetta 2..."
 
@@ -14,7 +30,7 @@ echo "Installing homebrew..."
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew bundle
+brew bundle --file=./$brewfile
 
 echo "Installing Python..."
 
@@ -65,20 +81,30 @@ mkdir Local\ Documents
 mkdir projects
 
 cat > .zshrc <<- EOM
-PROMPT='%F{22}%B%n%b%f %F{92}%1~%f $ '
-
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# alias
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 alias ld="cd ~/Local\ Documents/"
 alias proj="cd ~/projects"
 
+# autocomplete
 autoload -U compinit && compinit
 zmodload -i zsh/complist
+
+# git 
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %F{70}git:(%f%%F{184}%b%f%F{70})%f'
+setopt PROMPT_SUBST
+PROMPT='%F{22}%B%n%b%f %F{97}%1~%f% ${vcs_info_msg_0_} $ '
+
+export PATH="/opt/apache-maven-3.9.0/bin:$PATH"
 EOM
 
 

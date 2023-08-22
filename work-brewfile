@@ -60,13 +60,8 @@ cask "alfred"
 cask "audio-hijack"
 cask "bartender"
 cask "caldigit-docking-utility"
-cask "cleanmymac"
-cask "coconutbattery"
-cask "crossover"
-cask "daisydisk"
 cask "discord"
 cask "docker"
-cask "downie"
 cask "figma"
 cask "flutter"
 cask "git-credential-manager-core"
@@ -74,42 +69,26 @@ cask "gpg-suite"
 cask "logitech-camera-settings"
 cask "logitech-options"
 cask "logitech-unifying"
-cask "microsoft-teams"
-cask "minecraft"
 cask "ngrok"
-cask "permute"
 cask "postman"
-cask "soulver"
 cask "soundsource"
-cask "steam"
-cask "transmission"
-cask "transmit"
 cask "visual-studio-code"
 cask "zoom"
 mas "AdBlock Pro", id: 1018301773
-mas "Affinity Designer", id: 824171161
-mas "Apple Configurator", id: 1037126344
 mas "Balance Lock", id: 1019371109
+mas "Cardhop", id: 1290358394
 mas "Codye", id: 1516894961
-mas "Developer", id: 640199958
 mas "Drafts", id: 1435957248
 mas "Final Cut Pro", id: 424389933
-mas "Goodnotes", id: 1444383602
 mas "Keynote", id: 409183694
 mas "Logoist 4", id: 1493005285
-mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
-mas "Markdown Editor Pro", id: 1453295546
-mas "Mini Metro+", id: 1550663539
-mas "Mini Motorways", id: 1456188526
 mas "Movist", id: 461788075
 mas "Noir", id: 1592917505
 mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Parcel", id: 639968404
-mas "Pixelmator Pro", id: 1289583905
-mas "Spark", id: 1176895641
 mas "Step Two", id: 1448916662
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
