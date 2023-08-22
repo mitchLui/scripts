@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 echo "Setting up machine $HOSTNAME..."
 
@@ -57,18 +57,12 @@ PIP_PACKAGES=(
 
 pip3 install ${PIP_PACKAGES[@]}
 
-echo "Setting up ghc..."
-
-export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
-export BOOTSTRAP_HASKELL_GHC_VERSION=9.0.1
-
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-
-echo "Setting up bash..."
+echo "Setting up shell..."
 
 cd
 
 mkdir Local\ Documents
+mkdir projects
 
 cat > .zshrc <<- EOM
 PROMPT='%F{22}%B%n%b%f %F{92}%1~%f $ '
