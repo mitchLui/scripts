@@ -75,10 +75,8 @@ cask "visual-studio-code"
 cask "zoom"
 mas "AdBlock Pro", id: 1018301773
 mas "Balance Lock", id: 1019371109
-mas "Cardhop", id: 1290358394
 mas "Codye", id: 1516894961
 mas "Drafts", id: 1435957248
-mas "Final Cut Pro", id: 424389933
 mas "Keynote", id: 409183694
 mas "Logoist 4", id: 1493005285
 mas "Magnet", id: 441258766
